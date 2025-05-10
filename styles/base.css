@@ -99,7 +99,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 40vh; 
+    padding: 30px 0;
 }
 
 .container {
@@ -115,15 +115,20 @@ main {
     margin-bottom: 20px;
   }
   
-.filter {
-    background: black;
+.filters button {
+    background: #780000;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 6px;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
   }
+
+.filters button:hover {
+    background-color: #a00000;
+}
   
 .courses {
     display: flex;
@@ -132,13 +137,30 @@ main {
     gap: 15px;
   }
   
-.course {
-    padding: 15px 25px;
-    border-radius: 6px;
+  .course.cse {
+    border-color: #004080;
+    color: #004080;
+}
+
+.course.wdd {
+    border-color: #008000;
+    color: #008000;
+}
+
+/* Completed course style */
+.course.completed {
+    background-color: #c6f6c6;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+/* Credit summary */
+.credits-summary {
+    margin-top: 20px;
     font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
+    font-size: 1.1rem;
+    color: #333;
+}
   
 
 footer {

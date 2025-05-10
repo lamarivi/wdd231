@@ -50,19 +50,14 @@
             <h2>Web and Computer Programming Certificate</h2>
         
             <div class="filters">
-              <button class="filter">All</button>
-              <button class="filter">CSE</button>
-              <button class="filter">WDD</button>
+              <button onclick="displayCourses('all')">All</button>
+              <button onclick="displayCourses('CSE')">CSE</button>
+              <button onclick="displayCourses('WDD')">WDD</button>
             </div>
         
-            <div class="courses">
-              <button class="course cse">CSE 110</button>
-              <button class="course wdd">WDD 130</button>
-              <button class="course cse">CSE 111</button>
-              <button class="course cse">CSE 210</button>
-              <button class="course wdd">WDD 131</button>
-              <button class="course wdd">WDD 231</button>
-            </div>
+            
+            <div class="courses" id="courses"></div>
+            <p id="total-credits" class="credits-summary"></p>
           </div>
         </section>
     <footer>
