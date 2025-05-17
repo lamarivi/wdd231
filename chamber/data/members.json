@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Marinez Legal Firm",
+    "address": "8240 Nw 52nd Terrace, Suite 202 Doral FL 33166",
+    "phone": "866-866-5545",
+    "website": "https://martinezlegalfirm.com",
+    "image": "images/Martinezfirm.png",
+    "membershipLevel": 2,
+    "industry": "Law Firm",
+    "description": "Planning first"
+  },
+  {
+    "name": "Soda Producciones",
+    "address": "114 Menores #5 Coral Gables FL 33134",
+    "phone": "866-866-5545",
+    "website": "https://sodaproducciones.net",
+    "image": "images/Soda.png",
+    "membershipLevel": 3,
+    "industry": "Advertising",
+    "description": "We discover, represent, and cultivate gifted talents"
+  },
+  {
+    "name": "SVG Institute",
+    "address": "7791 NW 46th St Doral FL 33166",
+    "phone": "866-866-5545",
+    "website": "https://svginstitute.com",
+    "image": "images/SVG.png",
+    "membershipLevel": 1,
+    "industry": "Education",
+    "description": "After different experiences with their own immigration cases, they decided to bring knowledge and truthful information to those immigrants who needed it so much."
+  },
+  {
+    "name": "Las Americas Multimedia Group",
+    "address": "888 Brickell Ave., Ave., 5th Floor Miami FL 33131",
+    "phone": "866-866-5545",
+    "website": "https://www.diariolasamericas.com",
+    "image": "images/Lasamericas.png",
+    "membershipLevel": 3,
+    "industry": "Newspaper",
+    "description": "A digital newspaper with a printed edition."
+  },
+  {
+    "name": "Hispanomedios",
+    "address": "7291 NW 74th St Medley FL 33166",
+    "phone": "7862470475",
+    "website": "https://hispanomedios.com",
+    "image": "images/Hispanomedios.png",
+    "membershipLevel": 2,
+    "industry": "Entertainment",
+    "description": "We are an entertainment company that seeks to generate an emotional connection with the Spanish-speaking market."
+  },
+  {
+    "name": "Ticketplate LLC",
+    "address": "8350 NW 52nd Terrace Suite 301 Miami FL 33166",
+    "phone": "866-866-5545",
+    "website": "https://ticketplate.com",
+    "image": "images/Ticketplace.png",
+    "membershipLevel": 1,
+    "industry": "Events",
+    "description": "We support Latin American talent in the USGo to our page or download our app and buy tickets"
+  },
+  {
+    "name": "El Venezolano News",
+    "address": "Florida",
+    "phone": "866-866-5545",
+    "website": "https://elvenezolanonews.com",
+    "image": "images/Elvenezolano.png",
+    "membershipLevel": 2,
+    "industry": "Newspaper",
+    "description": "We are a free distribution print media outlet aimed at the Venezuelan community located in Miami, USA."
+  },
+  {
+    "name": "IVC Network, LLC",
+    "address": "2525 Ponce de Leon Blvd, Suite 250 Coral Gables FL 33134",
+    "phone": "866-866-5545",
+    "website": "https://www.ivcnetworks.com",
+    "image": "images/IVC.png",
+    "membershipLevel": 3,
+    "industry": "TV Channels",
+    "description": "International HD channel present in Latin America and the Caribbean brings you closer to original programming"
+  }
+]
