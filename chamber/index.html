@@ -1,96 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Directory | Chamber Venezuela">
+    <meta name="description" content="Official directory page of the Venezuela Chamber of Commerce. Join us and stay informed about business opportunities and events in Venezuela.">
+    <meta property="og:title" content="Home Page | Chamber Venezuela">
     <meta property="og:type" content="website">
-    <meta property="og:image"
-        content="images/Directory">
+    <meta property="og:image" content="images/Directory">
     <meta property="og:url" content="">
     <meta property="og:description" content="Chamber of Venezuela, Join us to get more information">
     <meta property="fb:app_id" content="your-app-id-here">
     <meta name="author" content="Marivi Castro" />
-    <script src="scripts/index.js" defer></script>
-
-    <title>Directory | Venezuela Chamber of Commerce</title>
+    <title>Home Page | Venezuela Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/index.css">
-
-     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:wght@700&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
 </head>
+<body>
+    <header>
+        <nav>
+            <div class="box-logo-header">
+                <img class="logo-chamber" src="images/logo.png" alt="Logo Chamber Venezuela" />
+                <h1 class="nameHeader">Venezuela <br>Chamber of Commerce</h1>
+            </div>
+            <ul class="nav" id="primaryNav">
+                <li><a class="nav-a" href="./index.html">Home</a></li>
+                <li><a class="nav-a" href="#">Discover</a></li>
+                <li><a class="nav-a" href="./directory.html">Directory</a></li>
+                <li><a class="nav-a" href="#">Join</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-     <nav>
-        <div class="box-logo-header">
-            <img class="logo-chamber" src="images/Logo.png" alt="Logo Chamber Venezuela" />
-            <h1 class="nameHeader">Venezuela <br>Chamber of Commerce</h1>
+    <main>
+        <section class="hero-main-box">
+            <picture class="hero-box-img">
+                <source media="(max-width: 600px)" srcset="images/small.webp">
+                <source media="(max-width: 800px)" srcset="images/mid.webp">
+                <source media="(max-width: 1200px)" srcset="images/big.webp">
+                <img class="hero-home-img" src="images/big.webp" alt="Venezuela">
+            </picture>
+
+            <div class="call-to-action">
+                <h3>Join the Venezuela Chamber of Commerce today!</h3>
+                <p>Click here to become a member.</p>
+                <button class="join-us" name="join" onclick="window.location.href='/chamber/join.html'">Join us</button>
+            </div>
+        </section>
+
+        <article class="event-main">
+            <h2>Current Events</h2>
+            <div id="events-list"></div>
+        </article>
+
+        <section id="weather-section">
+            <h3>Weather</h3>
+            <div id="weather-main"></div>
+            <div id="weather-forecast"></div>
+        </section>
+
+        <section class="spotlights-main-box"></section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Venezuela Chamber of Commerce" width="150">
+                <p>Promoting business growth in Venezuela</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com">
+                    <img src="images/facebook.png" alt="facebook" width="50">
+                </a>
+                <a href="https://twitter.com">
+                    <img src="images/twitter.png" alt="Twitter" width="55">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/social.png" alt="LinkedIn" width="60">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/social.png" alt="LinkedIn" width="60">
+                </a>
+            </div>
         </div>
-        <ul class="nav" id="primaryNav">
-            <li><a class="nav-a" href="./index.html">Home</a></li>
-            <li><a class="nav-a" href="#">Discover</a></li>
-            <li><a class="nav-a" href="./directory.html">Directory</a></li>
-            <li><a class="nav-a" href="#">Join</a></li>
-        </ul>
-    </nav>
-</header>
-
-  <main>
-    <section class="hero-main-box">
-      <picture class="hero-box-img">
-        <source media="(max-width: 600px)" srcset="images/small.webp">
-        <source media="(max-width: 800px)" srcset="images/mid.webp">
-        <source media="(max-width: 1200px)" srcset="images/big.webp">
-        <img class="hero-home-img" src="images/big.webp" alt="Venezuela">
-      </picture>
-
-      <div class="call-to-action">
-        <h3>Join the Venezuela Chamber of Commerce today!</h3>
-        <p>Click here to become a member.</p>
-        <button class="join-us" name="join" onclick="window.location.href='/chamber/join.html'">Join us</button>
-      </div>
-    </section>
-
-    <article class="event-main">
-      <h2>Current Events</h2>
-      <div id="events-list"></div>
-    </article>
-
-    <section id="weather-section">
-      <h3>Weather</h3>
-      <div id="weather-main"></div>
-      <div id="weather-forecast"></div>
-    </section>
-
-    <section class="spotlights-main-box"></section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="images/logo.png" alt="Venezuela Chamber of Commerce" width="150">
-        <p>Promoting business growth in Venezuela</p>
-      </div>
-      <div class="footer-social">
-        <h3>Follow Us</h3>
-        <a href="https://facebook.com">
-          <img src="images/facebook.png" alt="facebook" width="50">
-        </a>
-        <a href="https://twitter.com">
-          <img src="images/twitter.png" alt="Twitter" width="55">
-        </a>
-        <a href="https://www.linkedin.com">
-          <img src="images/social.png" alt="LinkedIn" width="60">
-        </a>
-      </div>
-    </div>
-    <div class="footer-base">
-      <p>&copy; <span id="currentyear"></span> Venezuela Chamber of Commerce | Marivi Castro | WDD 231 Project</p>
-      <p id="lastModified"></p>
-    </div>
-  </footer>
+        <div class="footer-base">
+            <p>&copy; <span id="currentyear"></span> Venezuela Chamber of Commerce | Marivi Castro | WDD 231 Project</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
 </body>
+
 </html>
