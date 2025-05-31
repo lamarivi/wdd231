@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('joinForm');
+    const timestampInput = document.getElementById('timestamp');
+
+    if (form && timestampInput) {
+        form.addEventListener('submit', function () {
+            const now = new Date();
+            timestampInput.value = now.toISOString();
+        });
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -45,3 +57,4 @@ function formatTimestamp(timestamp) {
         minute: '2-digit'
     });
 }
+
