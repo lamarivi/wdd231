@@ -1,60 +1,49 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('joinForm');
-    const timestampInput = document.getElementById('timestamp');
-
-    if (form && timestampInput) {
-        form.addEventListener('submit', function () {
-            const now = new Date();
-            timestampInput.value = now.toISOString();
-        });
-    }
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
-
-    const displayElements = {
-        'displayName': [urlParams.get('firstName'), urlParams.get('lastName')]
-            .filter(Boolean)
-            .join(' ')
-            .trim(),
-        'displayEmail': urlParams.get('email') || 'Not provided',
-        'displayPhone': urlParams.get('phone') || 'Not provided',
-        'displayBusiness': urlParams.get('businessName') || 'Not provided',
-        'displayMembership': getMembershipText(urlParams.get('membership')),
-        'displayTimestamp': formatTimestamp(urlParams.get('timestamp'))
+    
+    const displayData = {
+        name: `${urlParams.get('firstName') || ''} ${urlParams.get('lastName') || ''}`.trim(),
+        email: urlParams.get('email') || 'Not provided',
+        phone: urlParams.get('phone') || 'Not provided',
+        business: urlParams.get('businessName') || 'Not provided',
+        membership: getMembershipLevel(urlParams.get('membership')),
+        timestamp: formatTimestamp(urlParams.get('timestamp'))
     };
 
-    Object.entries(displayElements).forEach(([id, value]) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.textContent = value;
-        }
-    });
+    document.getElementById('displayName').textContent = displayData.name || 'Not provided';
+    document.getElementById('displayEmail').textContent = displayData.email;
+    document.getElementById('displayPhone').textContent = displayData.phone;
+    document.getElementById('displayBusiness').textContent = displayData.business;
+    document.getElementById('displayMembership').textContent = displayData.membership;
+    document.getElementById('displayTimestamp').textContent = displayData.timestamp;
+
+    localStorage.setItem('lastSubmission', JSON.stringify(displayData));
 });
 
-function getMembershipText(membership) {
-    switch(membership) {
-        case 'np': return 'NP Membership (Non-Profit)';
-        case 'bronze': return 'Bronze Membership';
-        case 'silver': return 'Silver Membership';
-        case 'gold': return 'Gold Membership';
-        default: return membership || 'Not specified';
-    }
+function getMembershipLevel(membership) {
+    const levels = {
+        'np': 'NP Membership (Non-Profit)',
+        'bronze': 'Bronze Membership',
+        'silver': 'Silver Membership',
+        'gold': 'Gold Membership'
+    };
+    return membership ? (levels[membership] || membership) : 'Not specified';
 }
 
 function formatTimestamp(timestamp) {
     if (!timestamp) return 'Not available';
-
-    const date = new Date(timestamp);
-    if (isNaN(date.getTime())) return 'Invalid date';
-
-    return date.toLocaleString(navigator.language || 'en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
+    
+    try {
+        const date = new Date(timestamp);
+        return isNaN(date) ? 'Invalid date' : 
+            date.toLocaleString(navigator.language, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+    } catch (e) {
+        return 'Invalid date format';
+    }
 }
-
