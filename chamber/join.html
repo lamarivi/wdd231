@@ -20,8 +20,8 @@
     <script src="scripts/join.js" defer></script>
 </head>
 <body>
-    <header>
-       <nav>
+  <header>
+    <nav>
       <div class="box-logo-header">
         <img class="logo-chamber" src="images/logo.webp" alt="Logo Chamber Venezuela" />
       </div>
@@ -32,191 +32,83 @@
         <li><a class="nav-a" href="#">Join</a></li>
       </ul>
     </nav>
-    </header>
+  </header>
 
-    <main>
-        <h1>Join the Chamber</h1>
-        
-        <div class="form-container">
-            <form action="thankyou.html" method="GET">
-                <input type="hidden" id="timestamp" name="timestamp">
-                
-                <label for="firstName">
-                    First Name*
-                    <input type="text" id="firstName" name="firstName" required 
-                           title="Please enter your first name" 
-                           autocomplete="given-name">
-                </label>
-                
-                <label for="lastName">
-                    Last Name*
-                    <input type="text" id="lastName" name="lastName" required 
-                           title="Please enter your last name" 
-                           autocomplete="family-name">
-                </label>
-                
-                <label for="title">
-                    Organizational Title
-                    <input type="text" id="title" name="title" 
-                           title="Please enter your organizational title. Must be at least 7 characters and contain only letters, hyphens, and spaces." 
-                           autocomplete="organization-title"
-                           pattern="[a-zA-Z\- ]{7,}">
-                </label>
-                
-                <label for="email">
-                    Email*
-                    <input type="email" id="email" name="email" required 
-                           title="Please enter your email address" 
-                           autocomplete="email"
-                           placeholder="example@domain.com">
-                </label>
-                
-                <label for="phone">
-                    Mobile Phone*
-                    <input type="tel" id="phone" name="phone" required 
-                           title="Please enter your mobile phone number" 
-                           autocomplete="tel">
-                </label>
-                
-                <label for="businessName">
-                    Business/Organization Name*
-                    <input type="text" id="businessName" name="businessName" required 
-                           title="Please enter your business or organization name" 
-                           autocomplete="organization">
-                </label>
-                
-                <label for="membership">
-                    Membership Level*
-                    <select id="membership" name="membership" required>
-                        <option value="">Select a level...</option>
-                        <option value="np">NP Membership (Non-Profit)</option>
-                        <option value="bronze">Bronze Membership</option>
-                        <option value="silver">Silver Membership</option>
-                        <option value="gold">Gold Membership</option>
-                    </select>
-                </label>
-                
-                <label for="description">
-                    Business/Organization Description
-                    <textarea id="description" name="description" 
-                              title="Please describe your business or organization"></textarea>
-                </label>
-                
-                <button type="submit">Submit Application</button>
-            </form>
-            
-            <div class="membership-levels">
-                <div class="membership-card">
-                    <h3>NP Membership</h3>
-                    <p>For non-profit organizations (no fee)</p>
-                    <p class="learn-more" onclick="openModal('npModal')">Learn More</p>
-                </div>
-                
-                <div class="membership-card">
-                    <h3>Bronze Membership</h3>
-                    <p>Basic membership with essential benefits</p>
-                    <p class="learn-more" onclick="openModal('bronzeModal')">Learn More</p>
-                </div>
-                
-                <div class="membership-card">
-                    <h3>Silver Membership</h3>
-                    <p>Enhanced benefits for growing businesses</p>
-                    <p class="learn-more" onclick="openModal('silverModal')">Learn More</p>
-                </div>
-                
-                <div class="membership-card">
-                    <h3>Gold Membership</h3>
-                    <p>Premium benefits for maximum exposure</p>
-                    <p class="learn-more" onclick="openModal('goldModal')">Learn More</p>
-                </div>
-            </div>
-        </div>
-        <div id="npModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('npModal')">&times;</span>
-                <h2>NP Membership Benefits</h2>
-                <ul>
-                    <li>Free membership for non-profit organizations</li>
-                    <li>Listing in our member directory</li>
-                    <li>Access to monthly networking events</li>
-                    <li>Subscription to our newsletter</li>
-                    <li>Participation in community service projects</li>
-                </ul>
-            </div>
-        </div>
-        <div id="bronzeModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
-                <h2>Bronze Membership Benefits</h2>
-                <ul>
-                    <li>Annual fee: $200</li>
-                    <li>All NP Membership benefits</li>
-                    <li>Discounts on chamber events</li>
-                    <li>Business training workshops</li>
-                    <li>Basic listing on our website</li>
-                    <li>Access to business resources</li>
-                </ul>
-            </div>
-        </div>
-        <div id="silverModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('silverModal')">&times;</span>
-                <h2>Silver Membership Benefits</h2>
-                <ul>
-                    <li>Annual fee: $400</li>
-                    <li>All Bronze Membership benefits</li>
-                    <li>Enhanced website listing with logo</li>
-                    <li>Priority registration for events</li>
-                    <li>Two free event tickets per year</li>
-                    <li>Monthly business spotlight opportunity</li>
-                    <li>Access to premium training sessions</li>
-                </ul>
-            </div>
-        </div>
-        <div id="goldModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('goldModal')">&times;</span>
-                <h2>Gold Membership Benefits</h2>
-                <ul>
-                    <li>Annual fee: $600</li>
-                    <li>All Silver Membership benefits</li>
-                    <li>Featured placement on our homepage</li>
-                    <li>Four free event tickets per year</li>
-                    <li>Exclusive invitations to VIP events</li>
-                    <li>Quarterly business consulting session</li>
-                    <li>Premium advertising opportunities</li>
-                    <li>Leadership recognition</li>
-                </ul>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.webp" alt="Chamber Logo" width="120">
-            </div>
-            <div class="footer-info">
-                <p>Venezuela Chamber of Commerce</p>
-                <p>123 Business Ave, Caracas, Venezuela</p>
-                <p>info@venezuelachamber.org</p>
-                <p>+58 212 555 1234</p>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <a href="https://facebook.com">
-                    <img src="images/facebook.png" alt="facebook" width="50">
-                </a>
-                <a href="https://twitter.com">
-                    <img src="images/twitter.png" alt="Twitter" width="55">
-                </a>
-                <a href="https://www.linkedin.com">
-                    <img src="images/social.png" alt="LinkedIn" width="60">
-                </a>
-                <a href="https://www.linkedin.com">
-                    <img src="images/tiktok.png" alt="tiktok" width="60">
-                </a>
-            </div>
-        </div>
-    </footer>
+  <main>
+    <section class="form-section">
+      <h1>Join the Venezuela Chamber of Commerce</h1>
+      <form id="joinForm" method="GET" action="thankyou.html">
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone" required />
+
+        <label for="businessName">Business Name:</label>
+        <input type="text" name="businessName" id="businessName" required />
+
+        <label for="membership">Membership Level:</label>
+        <select name="membership" id="membership" required>
+          <option value="">Select...</option>
+          <option value="np">NP Membership (Non-Profit)</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+        <input type="hidden" name="timestamp" id="timestamp" />
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo.webp" alt="Chamber Logo" width="120" />
+      </div>
+      <div class="footer-info">
+        <p>Venezuela Chamber of Commerce</p>
+        <p>123 Business Ave, Caracas, Venezuela</p>
+        <p>info@venezuelachamber.org</p>
+        <p>+58 212 555 1234</p>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="https://facebook.com">
+          <img src="images/facebook.png" alt="facebook" width="50" />
+        </a>
+        <a href="https://twitter.com">
+          <img src="images/twitter.png" alt="Twitter" width="55" />
+        </a>
+        <a href="https://www.linkedin.com">
+          <img src="images/social.png" alt="LinkedIn" width="60" />
+        </a>
+        <a href="https://www.linkedin.com">
+          <img src="images/tiktok.png" alt="tiktok" width="60" />
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentyear"></span> Venezuela Chamber of Commerce | Marivi Castro | WDD 230 Project</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("joinForm").addEventListener("submit", function () {
+      const now = new Date();
+      document.getElementById("timestamp").value = now.toISOString();
+    });
+
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
+  </script>
 </body>
 </html>
