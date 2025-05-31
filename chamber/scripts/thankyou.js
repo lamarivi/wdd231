@@ -1,64 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Parse URL parameters
+    // Get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     
-    // Display submitted data
-    const displayField = (elementId, paramName, defaultValue = 'Not provided') => {
+    // Display functions
+    function displayValue(elementId, value, defaultValue = 'Not provided') {
         const element = document.getElementById(elementId);
         if (element) {
-            const value = urlParams.get(paramName);
-            element.textContent = value ? value : defaultValue;
+            element.textContent = value || defaultValue;
         }
-    };
-
-    // Display combined first and last name
-    const firstName = urlParams.get('firstName') || '';
-    const lastName = urlParams.get('lastName') || '';
-    const displayName = document.getElementById('displayName');
-    if (displayName) {
-        displayName.textContent = `${firstName} ${lastName}`.trim() || 'Not provided';
     }
-
-    // Display other fields
-    displayField('displayEmail', 'email');
-    displayField('displayPhone', 'phone');
-    displayField('displayBusiness', 'businessName');
     
-    // Format membership level display
+    // Display combined name
+    const firstName = urlParams.get('firstName');
+    const lastName = urlParams.get('lastName');
+    displayValue('displayName', `${firstName || ''} ${lastName || ''}`.trim());
+    
+    // Display other fields
+    displayValue('displayEmail', urlParams.get('email'));
+    displayValue('displayPhone', urlParams.get('phone'));
+    displayValue('displayBusiness', urlParams.get('businessName'));
+    
+    // Format membership level
     const membership = urlParams.get('membership');
-    const displayMembership = document.getElementById('displayMembership');
-    if (displayMembership) {
-        switch(membership) {
-            case 'np':
-                displayMembership.textContent = 'NP Membership (Non-Profit)';
-                break;
-            case 'bronze':
-                displayMembership.textContent = 'Bronze Membership';
-                break;
-            case 'silver':
-                displayMembership.textContent = 'Silver Membership';
-                break;
-            case 'gold':
-                displayMembership.textContent = 'Gold Membership';
-                break;
-            default:
-                displayMembership.textContent = 'Not selected';
-        }
-    }
-
-    // Format timestamp display
+    const membershipText = {
+        'np': 'NP Membership (Non-Profit)',
+        'bronze': 'Bronze Membership',
+        'silver': 'Silver Membership',
+        'gold': 'Gold Membership'
+    }[membership] || 'Not selected';
+    displayValue('displayMembership', membershipText);
+    
+    // Format timestamp
     const timestamp = urlParams.get('timestamp');
-    const displayTimestamp = document.getElementById('displayTimestamp');
-    if (displayTimestamp) {
-        if (timestamp) {
+    if (timestamp) {
+        try {
             const date = new Date(timestamp);
-            displayTimestamp.textContent = date.toLocaleString();
-        } else {
-            displayTimestamp.textContent = 'Not recorded';
+            displayValue('displayTimestamp', date.toLocaleString());
+        } catch (e) {
+            displayValue('displayTimestamp', 'Invalid date');
         }
+    } else {
+        displayValue('displayTimestamp', 'Not recorded');
     }
-
-    // Set current year and last modified date
+    
+    // Set footer info
     document.getElementById('currentyear').textContent = new Date().getFullYear();
     document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
 });
