@@ -15,20 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const formData = new FormData(form);
             const params = new URLSearchParams(formData).toString();
-            form.action = `thankyou.html?${params}`;
-        });
-    }
 
-    const titleInput = document.getElementById('title');
-    const titleError = document.getElementById('title-error');
-    if (titleInput && titleError) {
-        titleInput.addEventListener('input', function() {
-            if (this.value && !this.validity.valid) {
-                titleError.textContent = this.title;
-                titleError.style.display = 'block';
-            } else {
-                titleError.style.display = 'none';
-            }
+            form.action = `thankyou.html?${params}`;
         });
     }
 
@@ -36,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
         }
     };
@@ -44,13 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
         }
     };
 
-    window.addEventListener('click', function(e) {
+    document.addEventListener('click', function(e) {
         if (e.target.classList.contains('modal')) {
             e.target.style.display = 'none';
+            e.target.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
         }
     });
@@ -60,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.modal').forEach(modal => {
                 if (modal.style.display === 'block') {
                     modal.style.display = 'none';
+                    modal.setAttribute('aria-hidden', 'true');
                     document.body.style.overflow = '';
                 }
             });
