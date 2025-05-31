@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.style.display = 'none';
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         };
 
