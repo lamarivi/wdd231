@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/join.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="images/tiktok.png" sizes="48x48" type="images/png">
+    <link rel="icon" href="images/logo.webp" sizes="48x48" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:wght@700&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="scripts/join.js" defer></script>
 </head>
@@ -58,10 +58,9 @@
                 <label for="title">
                     Organizational Title
                     <input type="text" id="title" name="title" 
-                           title="Please enter your organizational title" 
+                           title="Please enter your organizational title. Must be at least 7 characters and contain only letters, hyphens, and spaces." 
                            autocomplete="organization-title"
-                           pattern="[a-zA-Z\- ]{7,}"
-                           title="Title must be at least 7 characters and contain only letters, hyphens, and spaces">
+                           pattern="[a-zA-Z\- ]{7,}">
                 </label>
                 
                 <label for="email">
@@ -132,8 +131,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- NP Membership Modal -->
         <div id="npModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('npModal')">&times;</span>
@@ -147,8 +144,6 @@
                 </ul>
             </div>
         </div>
-        
-        <!-- Bronze Membership Modal -->
         <div id="bronzeModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
@@ -163,8 +158,6 @@
                 </ul>
             </div>
         </div>
-        
-        <!-- Silver Membership Modal -->
         <div id="silverModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('silverModal')">&times;</span>
@@ -180,8 +173,6 @@
                 </ul>
             </div>
         </div>
-        
-        <!-- Gold Membership Modal -->
         <div id="goldModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('goldModal')">&times;</span>
@@ -211,20 +202,20 @@
                 <p>+58 212 555 1234</p>
             </div>
             <div class="footer-social">
-        <h3>Follow Us</h3>
-        <a href="https://facebook.com">
-          <img src="images/facebook.png" alt="facebook" width="50">
-        </a>
-        <a href="https://twitter.com">
-          <img src="images/twitter.png" alt="Twitter" width="55">
-        </a>
-        <a href="https://www.linkedin.com">
-          <img src="images/social.png" alt="LinkedIn" width="60">
-        </a>
-          <a href="https://www.linkedin.com">
-          <img src="images/tiktok.png" alt="tiktok" width="60">
-        </a>
-      </div>
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com">
+                    <img src="images/facebook.png" alt="facebook" width="50">
+                </a>
+                <a href="https://twitter.com">
+                    <img src="images/twitter.png" alt="Twitter" width="55">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/social.png" alt="LinkedIn" width="60">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/tiktok.png" alt="tiktok" width="60">
+                </a>
+            </div>
         </div>
     </footer>
 </body>
