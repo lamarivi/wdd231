@@ -1,37 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const timestampField = document.getElementById('timestamp');
-    if (timestampField) {
-        timestampField.value = new Date().toISOString();
-    }
-
+    const form = document.getElementById('joinForm');
+    const timestampInput = document.getElementById('timestamp');
     const titleInput = document.getElementById('title');
     const titleError = document.getElementById('title-error');
 
+    if (timestampInput) {
+        timestampInput.value = new Date().toISOString();
+    }
+
     if (titleInput && titleError) {
-        titleInput.addEventListener('input', function() {
-            if (this.validity.patternMismatch) {
+        titleInput.addEventListener('input', validateTitle);
+        titleInput.addEventListener('blur', validateTitle);
+        
+        function validateTitle() {
+            if (titleInput.value && !titleInput.validity.valid) {
+                titleError.textContent = 'Title must be 7+ characters (letters, hyphens, spaces only)';
                 titleError.style.display = 'block';
+                titleInput.classList.add('invalid');
             } else {
                 titleError.style.display = 'none';
+                titleInput.classList.remove('invalid');
             }
-        });
+        }
+    }
 
-        titleInput.addEventListener('blur', function() {
-            if (this.value && this.validity.patternMismatch) {
-                titleError.style.display = 'block';
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                highlightInvalidFields();
+                return;
             }
+
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+
+            form.action = `thankyou.html?${params.toString()}`;
+
+            sessionStorage.setItem('formSubmission', JSON.stringify(Object.fromEntries(formData)));
         });
     }
 
-    const modalElements = document.querySelectorAll('.modal');
-    if (modalElements.length > 0) {
+    const modals = document.querySelectorAll('.modal');
+    if (modals.length > 0) {
         window.openModal = function(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.style.display = 'block';
-                document.body.style.overflow = 'hidden'; 
-                const focusable = modal.querySelector('input, button, [tabindex]');
-                if (focusable) focusable.focus();
+                document.body.style.overflow = 'hidden';
             }
         };
 
@@ -43,13 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        function closeAllModals() {
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.style.display = 'none';
-            });
-            document.body.style.overflow = '';
-        }
-
         window.addEventListener('click', function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
@@ -59,47 +71,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeAllModals();
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
             }
         });
     }
 
-    const joinForm = document.getElementById('joinForm');
-    if (joinForm) {
-        joinForm.addEventListener('submit', function(event) {
-            let isValid = true;
+    function highlightInvalidFields() {
+        const invalidFields = form.querySelectorAll(':invalid');
+        
+        invalidFields.forEach(field => {
+            field.classList.add('invalid');
             
-            const requiredFields = joinForm.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.classList.add('invalid');
-                    isValid = false;
-                } else {
-                    field.classList.remove('invalid');
-                }
-            });
-
-            if (titleInput && titleInput.value && titleInput.validity.patternMismatch) {
-                titleInput.classList.add('invalid');
-                titleError.style.display = 'block';
-                isValid = false;
-            }
-
-            if (!isValid) {
-                event.preventDefault();
-                const firstInvalid = joinForm.querySelector('.invalid');
-                if (firstInvalid) {
-                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-        });
-
-        joinForm.querySelectorAll('input, select, textarea').forEach(element => {
-            element.addEventListener('input', function() {
-                if (this.value.trim()) {
+            field.addEventListener('input', function() {
+                if (this.checkValidity()) {
                     this.classList.remove('invalid');
                 }
             });
         });
+
+        if (invalidFields.length > 0) {
+            invalidFields[0].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
     }
 });
