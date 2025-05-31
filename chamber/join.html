@@ -100,13 +100,11 @@
       <p id="lastModified"></p>
     </div>
   </footer>
-
   <script>
     document.getElementById("joinForm").addEventListener("submit", function () {
       const now = new Date();
       document.getElementById("timestamp").value = now.toISOString();
     });
-
     document.getElementById("currentyear").textContent = new Date().getFullYear();
     document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
   </script>
