@@ -1,0 +1,60 @@
+{
+  "attractions": [
+    {
+      "id": 1,
+      "name": "Colonia Tovar",
+      "address": "Aragua, Venezuela",
+      "description": "La Colonia Tovar is a charming alpine town founded by German immigrants in 1843.",
+      "image": "images/Colonia-tovar.webp"
+    },
+    {
+      "id": 2,
+      "name": "La Guaira",
+      "address": "La Guaira, Venezuela",
+      "description": "Just 30km from Caracas, La Guaira blends coastal relaxation with rich history.",
+      "image": "images/La-Guaira.webp"
+    },
+    {
+      "id": 3,
+      "name": "Parque el Calvario",
+      "address": "Caracas, Venezuela",
+      "description": "Climb the famous 100-step staircase to discover fountains and sculptures",
+      "image": "images/ParqueCalvario.webp"
+    },
+    {
+      "id": 4,
+      "name": "El Valle church",
+      "address": "Isla de Margarita, Venezuela",
+      "description": "The heart of El Valle's community, this basilica hosts vibrant religious festivals and Sunday markets.",
+      "image": "images/elvalle.webp"
+    },
+    {
+      "id": 5,
+      "name": "Cabo Negro",
+      "address": "Isla de Margarita, Venezuela",
+      "description": "This untouched paradise near Playa El Agua features unique black sandstone cliffs shaped by centuries of waves.",
+      "image": "images/cabonegro.webp"
+    },
+    {
+      "id": 6,
+      "name": "Cubagua",
+      "address": "Isla de Margarita, Venezuela",
+      "description": "Explore the skeletal remains of Nueva Cádiz, Latin America's first European city, now a protected archaeological site.",
+      "image": "images/cubagua.webp"
+    },
+    {
+      "id": 7,
+      "name": "La Restinga",
+      "address": "Isla de Margarita, Venezuela",
+      "description": "This UNESCO-recognized wetland is a sanctuary for rare wildlife and a vital fishing ground for locals.",
+      "image": "images/restinga.webp"
+    },
+    {
+      "id": 8,
+      "name": "Macanao",
+      "address": "Isla de Margarita, Venezuela",
+      "description": "This protected peninsula offers Margarita's most authentic natural experience.",
+      "image": "images/macanao.webp"
+    }
+  ]
+}
