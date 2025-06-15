@@ -1,0 +1,40 @@
+{
+  "islandName": "Margarita Island",
+  "quickFacts": {
+    "size": {
+      "area": "1,020 km² (394 sq mi)",
+      "length": "78 km (48 mi)",
+      "width": "20 km (12 mi)",
+      "significance": "Largest island in Venezuela",
+      "coordinates": {
+        "latitude": 10.9856,
+        "longitude": -63.9653
+      }
+    },
+    "ecosystems": [
+      {
+        "name": "La Restinga Mangroves",
+        "type": "Mangrove Forest",
+        "keySpecies": ["Scarlet Ibis", "Blue Crab", "Four-eyed Fish"],
+        "protectedStatus": "National Park",
+        "image": "images/restinga.webp",
+        "location": "Southern Coast"
+      },
+      {
+        "name": "El Copey",
+        "type": "Montane",
+        "keySpecies": ["Red Tree Frog", "Margarita Island Capuchin Monkey", "Margarita Island White-tailed Deer"],
+        "protectedStatus": "National Park",
+        "image": "images/copey.webp",
+        "location": "Eastern Region"
+      },
+      {
+        "name": "Playa Parguito",
+        "type": "Marine",
+        "keySpecies": ["Green Sea Turlte", "Leatherback Sea Turtle", "Loggerhead Sea Turtle"],
+        "protectedStatus": "none",
+        "image": "images/parguito.webp",
+        "location": "Northeast Region"
+      }
+    ]
+}}

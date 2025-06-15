@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Hawksbill Turtle",
+        "image": "images/turtle.jpg",
+        "habitats": ["marine", "coral-reef"],
+        "description": "Critically endangered sea turtle known for its beautiful shell.",
+        "conservationStatus": "Critically Endangered"
+    },
+    {
+        "name": "Blue Tang Fish",
+        "image": "images/fish.webp",
+        "habitats": ["marine", "coral-reef"],
+        "description": "Bright blue fish popularized by the movie Finding Nemo.",
+        "conservationStatus": "Least Concern"
+    },
+    {
+        "name": "Margarita Burrowing Owl",
+        "image": "images/owl.jpg",
+        "habitats": ["desert"],
+        "description": "Small, long-legged owl that nests in underground burrows.",
+        "conservationStatus": "Least Concern"
+    },
+    {
+        "name": "Cactus Wren",
+        "image": "images/bird.jpg",
+        "habitats": ["desert"],
+        "description": "Large wren species that builds nests in cacti for protection.",
+        "conservationStatus": "Least Concern"
+    },
+    {
+        "name": "Mangrove Warbler",
+        "image": "images/amarillo.jpg",
+        "habitats": ["mangrove"],
+        "description": "Small songbird that thrives in mangrove ecosystems.",
+        "conservationStatus": "Near Threatened"
+    }
+]

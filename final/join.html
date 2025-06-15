@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Margarita Biodiversa to support conservation efforts">
+    <meta name="author" content="Marivi Castro">
+    <title>Join Us | Margarita Biodiversa</title>
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:wght@700&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+    <nav>
+      <div class="box-logo-header">
+        <img class="logo-chamber" src="images/logo.webp" alt="Logo Margarita biodiversa" />
+        <button id="hamburgerBtn" class="hamburger">☰</button>
+      </div>
+      <ul class="nav" id="primaryNav">
+        <li><a class="nav-a" href="./index.html">Home</a></li>
+        <li><a class="nav-a" href="./species.html">Species</a></li>
+        <li><a class="nav-a" href="./conservation.html">Conservation</a></li>
+        <li><a class="nav-a" href="./join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+    <main class="join-main">
+        <h1>Become a Margarita Biodiversa Supporter</h1>
+        
+        <form id="membershipForm" action="form-action.html" method="get">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-group">
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Title/Position</label>
+                    <input type="text" id="title" name="title" pattern="[A-Za-z -]{7,}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Membership Level</legend>
+                <div class="form-group radio-group">
+                    <label>
+                        <input type="radio" name="membership" value="basic" checked> Basic Member (Free)
+                    </label>
+                    <p>Access to newsletter and basic resources</p>
+                </div>
+                
+                <div class="form-group radio-group">
+                    <label>
+                        <input type="radio" name="membership" value="supporter"> Supporter ($50/year)
+                    </label>
+                    <p>All basic benefits plus invitations to local events</p>
+                </div>
+                
+                <div class="form-group radio-group">
+                    <label>
+                        <input type="radio" name="membership" value="sponsor"> Sponsor ($100/year)
+                    </label>
+                    <p>All supporter benefits plus recognition on our website</p>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Additional Information</legend>
+                <div class="form-group">
+                    <label for="organization">Organization/Business</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+                
+                <div class="form-group">
+                    <label for="interests">Areas of Interest</label>
+                    <select id="interests" name="interests" multiple size="4">
+                        <option value="marine">Marine Conservation</option>
+                        <option value="coastal">Coastal Ecosystems</option>
+                        <option value="education">Environmental Education</option>
+                        <option value="research">Scientific Research</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">How did you hear about us?</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+            </fieldset>
+            
+            <input type="hidden" id="timestamp" name="timestamp">
+            
+            <button type="submit" class="join-button">Submit Application</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.webp" alt="Margarita Biodiversa" width="150">
+                <p>Promoting the biodiversity in Venezuela</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com">
+                    <img src="images/facebook.png" alt="facebook" width="60">
+                </a>
+                <a href="https://twitter.com">
+                    <img src="images/twitter.png" alt="Twitter" width="60">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/linkedin.png" alt="LinkedIn" width="60">
+                </a>
+                <a href="https://www.instagram.com">
+                    <img src="images/instagram.png" alt="instagram" width="60">
+                </a>
+            </div>
+        </div>
+        <div class="footer-base">
+            <p>&copy; <span id="currentyear"></span> Margarita biodiversa | Marivi Castro | WDD 231 Project</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
